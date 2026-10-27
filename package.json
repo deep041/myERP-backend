@@ -1,0 +1,43 @@
+{
+  "name": "erp-backend",
+  "version": "1.0.0",
+  "description": "ERP SaaS API",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "test": "node --import tsx --test tests/auth-tenants.test.ts",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "postinstall": "prisma generate"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "argon2": "^0.44.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.23",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^22.19.0",
+    "@types/supertest": "^6.0.3",
+    "pg": "^8.16.3",
+    "prisma": "^6.19.0",
+    "supertest": "^7.1.4",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
